@@ -1,0 +1,9 @@
+/* Styles for Insights component */
+
+.insights { background: var(--lemon); }
+.insight-list { border-top: 1px solid var(--line); }
+.insight-card { display: grid; grid-template-columns: 50px 1fr 30px; gap: 20px; align-items: start; padding: 27px 0; border-bottom: 1px solid var(--line); }
+.insight-number, .insight-category { font-size: 10px; color: var(--red); letter-spacing: .09em; }
+.insight-card h3 { font-size: clamp(23px, 3vw, 36px); max-width: 760px; line-height: 1.05; margin: 10px 0; }
+.insight-card p { color: #625c53; max-width: 650px; line-height: 1.6; font-size: 13px; margin: 0; }
+.insight-arrow { color: var(--red); }

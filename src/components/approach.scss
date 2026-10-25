@@ -1,0 +1,13 @@
+/* Styles for Approach component */
+
+.approach { background: var(--ink); color: var(--lemon); display: grid; grid-template-columns: 1fr .8fr; gap: 9vw; padding-top: 110px; padding-bottom: 110px; }
+.approach .eyebrow { color: #f36b56; }
+.approach h2 { font-size: clamp(54px, 7vw, 100px); }
+.approach-body { padding-top: 45px; }
+.approach-big { font-size: clamp(23px, 2.7vw, 34px); line-height: 1.18; letter-spacing: -.04em; }
+.approach-body > p:not(.approach-big) { color: #c5bfb3; line-height: 1.7; font-size: 14px; max-width: 450px; }
+.principles { border-top: 1px solid #494640; margin-top: 35px; }
+.principles > div { display: grid; grid-template-columns: 35px 1fr; gap: 5px 12px; border-bottom: 1px solid #494640; padding: 17px 0; }
+.principles span { grid-row: span 2; color: #f36b56; font-size: 11px; }
+.principles b { font-size: 15px; font-weight: 500; }
+.principles small { color: #aaa398; font-size: 11px; }

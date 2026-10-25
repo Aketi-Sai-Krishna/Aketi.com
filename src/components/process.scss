@@ -1,0 +1,10 @@
+/* Styles for Process component */
+
+.process { padding-top: 110px; padding-bottom: 110px; display: grid; grid-template-columns: .85fr 1fr; gap: 9vw; background: var(--lemon); }
+.process-intro > p:not(.eyebrow) { max-width: 390px; color: #625c53; font-size: 15px; line-height: 1.7; margin-top: 24px; }
+.process-intro .text-link { margin-top: 12px; }
+.process-steps { border-top: 1px solid var(--line); }
+.process-step { display: grid; grid-template-columns: 42px 1fr; gap: 15px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.process-step > span { color: var(--red); font-size: 11px; padding-top: 4px; }
+.process-step h3 { font-size: 22px; margin: 0 0 8px; letter-spacing: -.035em; }
+.process-step p { color: #625c53; font-size: 13px; line-height: 1.6; margin: 0; max-width: 470px; }

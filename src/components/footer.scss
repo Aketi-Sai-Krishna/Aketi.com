@@ -1,0 +1,9 @@
+/* Styles for Footer component */
+
+.site-footer { padding: 32px var(--page-pad) 20px; background: var(--lemon); }
+.footer-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-bottom: 35px; }
+.footer-wordmark { font-size: clamp(40px, 7vw, 75px); letter-spacing: -.07em; }
+.footer-top p { font-size: 17px; line-height: 1.2; margin: 0; letter-spacing: -.025em; }
+.back-top { border-bottom: 1px solid var(--ink); padding-bottom: 6px; }
+.footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px; padding-top: 17px; border-top: 1px solid var(--line); color: var(--muted); font-size: 8px; }
+.footer-bottom span:last-child { display: flex; align-items: center; gap: 7px; color: var(--red); }
