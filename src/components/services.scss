@@ -1,6 +1,4 @@
 
-/* AKETI — SERVICES SECTION */
-
 .services {
   background: var(--paper);
 }
@@ -30,7 +28,7 @@
   line-height: 1.7;
 }
 
-/* Service grid */
+
 
 .service-grid {
   display: grid;
@@ -39,7 +37,7 @@
   perspective: 1000px;
 }
 
-/* Individual card */
+
 
 .service-card {
   position: relative;
@@ -66,7 +64,6 @@
     background 250ms ease;
 }
 
-/* Subtle light reflection */
 
 .service-card::after {
   content: '';
@@ -85,7 +82,6 @@
   transition: opacity 250ms ease;
 }
 
-/* Card content */
 
 .service-card-top,
 .service-card h3,
@@ -170,14 +166,12 @@
   }
 }
 
-/* Keyboard accessibility */
 
 .service-card:focus-within {
   outline: 2px solid var(--red);
   outline-offset: 3px;
 }
 
-/* Tablet */
 
 @media (max-width: 1050px) {
   .service-grid {
@@ -185,7 +179,7 @@
   }
 }
 
-/* Mobile */
+
 
 @media (max-width: 700px) {
   .services .section-heading {
@@ -219,7 +213,7 @@
   }
 }
 
-/* Reduced motion accessibility */
+
 
 @media (prefers-reduced-motion: reduce) {
   .service-card,
