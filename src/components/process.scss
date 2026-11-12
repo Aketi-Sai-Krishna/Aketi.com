@@ -1,10 +1,261 @@
-/* Styles for Process component */
+// /* Styles for Process component */
 
-.process { padding-top: 110px; padding-bottom: 110px; display: grid; grid-template-columns: .85fr 1fr; gap: 9vw; background: var(--lemon); }
-.process-intro > p:not(.eyebrow) { max-width: 390px; color: #625c53; font-size: 15px; line-height: 1.7; margin-top: 24px; }
-.process-intro .text-link { margin-top: 12px; }
-.process-steps { border-top: 1px solid var(--line); }
-.process-step { display: grid; grid-template-columns: 42px 1fr; gap: 15px; padding: 22px 0; border-bottom: 1px solid var(--line); }
-.process-step > span { color: var(--red); font-size: 11px; padding-top: 4px; }
-.process-step h3 { font-size: 22px; margin: 0 0 8px; letter-spacing: -.035em; }
-.process-step p { color: #625c53; font-size: 13px; line-height: 1.6; margin: 0; max-width: 470px; }
+// .process { padding-top: 60px; padding-bottom: 60px; display: grid; grid-template-columns: .85fr 1fr; gap: 9vw; background: var(--red); }
+// .process-intro > p:not(.eyebrow) { max-width: 390px; color: white; font-size: 15px; line-height: 1.7; margin-top: 24px; }
+// .process-intro .text-link { margin-top: 12px; }
+// .process-steps { border-top: 1px solid var(--line); }
+// .process-step { display: grid; grid-template-columns: 42px 1fr; gap: 15px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+// .process-step > span { color: var(--red); font-size: 11px; padding-top: 4px; }
+// .process-step h3 { font-size: 22px; margin: 0 0 8px; letter-spacing: -.035em; color: white }
+// .process-step p { color: white; font-size: 13px; line-height: 1.6; margin: 0; max-width: 470px; }
+
+
+
+/* =========================================
+   AKETI — 3D Popup Process Section
+========================================= */
+
+.process {
+  background: var(--red);
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  gap: 9vw;
+  align-items: start;
+}
+
+/* =========================================
+   INTRO
+========================================= */
+
+.process-intro {
+  position: relative;
+}
+
+.process-intro .eyebrow {
+  color: var(--lemon);
+}
+
+.process-intro h2 {
+  color: var(--paper);
+  font-size: clamp(48px, 6vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.process-intro > p:not(.eyebrow) {
+  max-width: 390px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-top: 24px;
+}
+
+.process-intro .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  color: var(--lemon);
+  border-bottom: 1px solid rgba(255, 250, 205, 0.6);
+  padding-bottom: 7px;
+  transition: gap 250ms ease;
+}
+
+.process-intro .text-link:hover {
+  gap: 13px;
+}
+
+/* =========================================
+   PROCESS STEPS
+========================================= */
+
+.process-steps {
+  display: grid;
+  gap: 12px;
+  perspective: 1200px;
+}
+
+/* Individual cards */
+
+.process-step {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  align-items: start;
+  gap: 15px;
+
+  min-width: 0;
+  padding: 24px 22px;
+
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 5px;
+
+  transform: translate3d(0, 0, 0);
+  transform-style: preserve-3d;
+
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.035);
+
+  transition:
+    transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 300ms ease,
+    background-color 250ms ease,
+    border-color 250ms ease;
+}
+
+/* Step number */
+
+.process-step > span {
+  color: var(--lemon);
+  font-size: 11px;
+  padding-top: 5px;
+
+  transform: translateZ(15px);
+  transition:
+    color 250ms ease,
+    transform 300ms ease;
+}
+
+/* Content */
+
+.process-step > div {
+  transform: translateZ(15px);
+  transition: transform 300ms ease;
+}
+
+.process-step h3 {
+  margin: 0 0 9px;
+
+  color: var(--paper);
+  font-size: clamp(20px, 2.2vw, 26px);
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+
+  transition: color 250ms ease;
+}
+
+.process-step p {
+  max-width: 470px;
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 13px;
+  line-height: 1.7;
+
+  transition: color 250ms ease;
+}
+
+/* =========================================
+   3D POPUP HOVER — NO ROTATION
+========================================= */
+
+@media (hover: hover) and (pointer: fine) {
+  .process-step:hover {
+    z-index: 2;
+
+    background: var(--lemon);
+    border-color: rgba(255, 250, 205, 0.9);
+
+    transform: translate3d(0, -7px, 22px);
+
+    box-shadow:
+      0 22px 38px rgba(0, 0, 0, 0.2),
+      0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .process-step:hover > span {
+    color: var(--red);
+    transform: translateZ(28px);
+  }
+
+  .process-step:hover > div {
+    transform: translateZ(30px);
+  }
+
+  .process-step:hover h3 {
+    color: var(--red);
+  }
+
+  .process-step:hover p {
+    color: #625c53;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .process {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .process-intro > p:not(.eyebrow) {
+    max-width: 520px;
+  }
+
+  .process-steps {
+    gap: 10px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .process {
+    padding-top: 55px;
+    padding-bottom: 55px;
+    gap: 35px;
+  }
+
+  .process-intro h2 {
+    font-size: clamp(45px, 12vw, 64px);
+  }
+
+  .process-step {
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 12px;
+    padding: 21px 16px;
+  }
+
+  .process-step h3 {
+    font-size: 21px;
+  }
+
+  .process-step p {
+    font-size: 12px;
+  }
+
+  /* No 3D transform on touch devices */
+  .process-step,
+  .process-step > span,
+  .process-step > div {
+    transform: none;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .process-step,
+  .process-step > span,
+  .process-step > div,
+  .process-step h3,
+  .process-step p,
+  .process-intro .text-link {
+    transition: none !important;
+  }
+
+  .process-step:hover {
+    transform: none;
+  }
+}

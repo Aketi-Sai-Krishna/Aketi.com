@@ -10,11 +10,11 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="process section-shell" id="approach">
+    <section className="process section-shell" id="process">
       <div className="process-intro">
-        <p className="eyebrow">03 — HOW WE WORK</p>
-        <h2>Clear thinking.<br /><em>No theatre.</em></h2>
-        <p>Good work comes from clear conversations and useful decisions—not jargon, mystery, or a 90-slide deck.</p>
+        <p className="eyebrow"> 04 — HOW WE WORK </p>
+        <h2> Clear thinking </h2>
+        <p> Good work comes from clear conversations and useful decisions—not jargon, mystery, or a 90-slide deck.</p>
         <a className="text-link" href="#contact">Talk through your idea <ArrowUpRight size={16} /></a>
       </div>
       <div className="process-steps">

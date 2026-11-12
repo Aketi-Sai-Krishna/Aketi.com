@@ -25,10 +25,6 @@ export default function Hero() {
             </a>
 
             <a className="showreel-link" href="#work">
-                
-              {/* <span className="play-button" aria-hidden="true">
-                ↘
-              </span> */}
               <span>Our Previous Work's</span>
                  <ArrowDownRight size={18} aria-hidden="true" />
             </a>
@@ -38,14 +34,6 @@ export default function Hero() {
         {/* Hero visual */}
         <div className="hero-art">
           <OrbitVisual />
-
-          {/* <div className="art-sticker" aria-label="Less busywork">
-            <span className="sticker-symbol" aria-hidden="true">
-              ✳
-            </span>
-            <span>LESS</span>
-            <span>BUSYWORK</span>
-          </div> */}
         </div>
       </div>
 

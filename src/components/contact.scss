@@ -1,17 +1,322 @@
-/* Styles for Contact component */
+// /* Styles for Contact component */
 
-.contact { background: var(--paper); padding-top: 105px; padding-bottom: 105px; display: grid; grid-template-columns: 1fr .78fr; gap: 9vw; }
-.contact-heading h2 { font-size: clamp(54px, 7vw, 94px); }
-.contact-heading > p:not(.eyebrow) { max-width: 400px; color: #625c53; font-size: 15px; line-height: 1.7; margin-top: 25px; }
-.contact-links { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 28px; }
-.contact-links a { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; border-bottom: 1px solid var(--ink); padding-bottom: 7px; }
-.contact-note { display: block; margin-top: 32px; color: var(--muted); font-size: 11px; }
-.contact-form { display: flex; flex-direction: column; gap: 21px; padding-top: 10px; }
-.contact-form label { display: flex; flex-direction: column; gap: 9px; font-size: 12px; }
-.contact-form label span { color: var(--muted); font-size: 9px; }
-.contact-form input, .contact-form textarea { width: 100%; border: 0; border-bottom: 1px solid #c9c1b4; background: transparent; border-radius: 0; padding: 11px 0 13px; outline: none; font-size: 14px; resize: vertical; color: var(--ink); }
-.contact-form input:focus, .contact-form textarea:focus { border-color: var(--red); }
-.contact-form input::placeholder, .contact-form textarea::placeholder { color: #9a9286; }
-.form-submit { justify-content: space-between; margin-top: 5px; }
-.contact-form > small, .form-feedback { color: var(--muted); font-size: 10px; line-height: 1.5; }
-.form-feedback { color: var(--red); margin: -10px 0 0; }
+// .contact { background: var(--paper); padding-top: 105px; padding-bottom: 105px; display: grid; grid-template-columns: 1fr .78fr; gap: 9vw; }
+// .contact-heading h2 { font-size: clamp(54px, 7vw, 94px); }
+// .contact-heading > p:not(.eyebrow) { max-width: 400px; color: #625c53; font-size: 15px; line-height: 1.7; margin-top: 25px; }
+// .contact-links { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 28px; }
+// .contact-links a { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; border-bottom: 1px solid var(--ink); padding-bottom: 7px; }
+// .contact-note { display: block; margin-top: 32px; color: var(--muted); font-size: 11px; }
+// .contact-form { display: flex; flex-direction: column; gap: 21px; padding-top: 10px; }
+// .contact-form label { display: flex; flex-direction: column; gap: 9px; font-size: 12px; }
+// .contact-form label span { color: var(--muted); font-size: 9px; }
+// .contact-form input, .contact-form textarea { width: 100%; border: 0; border-bottom: 1px solid #c9c1b4; background: transparent; border-radius: 0; padding: 11px 0 13px; outline: none; font-size: 14px; resize: vertical; color: var(--ink); }
+// .contact-form input:focus, .contact-form textarea:focus { border-color: var(--red); }
+// .contact-form input::placeholder, .contact-form textarea::placeholder { color: #9a9286; }
+// .form-submit { justify-content: space-between; margin-top: 5px; }
+// .contact-form > small, .form-feedback { color: var(--muted); font-size: 10px; line-height: 1.5; }
+// .form-feedback { color: var(--red); margin: -10px 0 0; }
+
+
+
+/* Plain AKETI contact section — no mascot */
+
+.contact {
+  background: var(--paper);
+  padding-top: 60px;
+  padding-bottom: 60px;
+  display: grid;
+  grid-template-columns: 1fr .78fr;
+  gap: 6vw;
+  align-items: start;
+}
+
+.contact-heading h2 {
+  font-size: clamp(54px, 7vw, 94px);
+}
+
+.contact-heading .eyebrow{
+    padding-bottom: 15px;
+}
+
+.contact-heading > p:not(.eyebrow) {
+  max-width: 400px;
+  color: #625c53;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-top: 25px;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 7px;
+}
+
+.contact-note {
+  display: block;
+  margin-top: 32px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* Form */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  padding-top: 10px;
+}
+
+.contact-form .contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 12px;
+}
+
+.contact-field input,
+.contact-field textarea {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #c9c1b4;
+  background: transparent;
+  border-radius: 0;
+  padding: 11px 0 13px;
+  outline: none;
+  font-size: 14px;
+  resize: vertical;
+  color: var(--ink);
+  transition: border-color .2s ease, background .2s ease;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  border-color: var(--red);
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: #9a9286;
+}
+
+.contact-field input[aria-invalid="true"],
+.contact-field textarea[aria-invalid="true"] {
+  border-color: var(--red);
+  background: rgba(184, 17, 4, .035);
+}
+
+/* Inline validation */
+
+.field-error {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--red);
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.field-error svg {
+  flex-shrink: 0;
+}
+
+.form-feedback {
+  color: var(--red);
+  font-size: 10px;
+  line-height: 1.5;
+  margin: -10px 0 0;
+}
+
+/* Buttons */
+
+.form-submit {
+  justify-content: space-between;
+  margin-top: 5px;
+  gap: 12px;
+}
+
+.form-submit:disabled {
+  opacity: .7;
+  cursor: wait;
+}
+
+
+.contact-whatsapp {
+  width: 100%;
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  border: 1px solid var(--ink);
+  padding: 10px 12px;
+
+  color: var(--ink);
+  background: transparent;
+  font-size: 16px;
+  text-decoration: none;
+
+  transition: background .2s ease, color .2s ease;
+}
+
+.contact-whatsapp:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.contact-whatsapp svg {
+  flex-shrink: 0;
+}
+
+.contact-form > small {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* Sending animation */
+
+.contact-spin {
+  animation: contact-spin 1s linear infinite;
+}
+
+@keyframes contact-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Success / Error popup */
+
+.contact-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(18, 17, 15, .48);
+  backdrop-filter: blur(5px);
+}
+
+.contact-result-modal {
+  width: min(100%, 390px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 35px 28px 28px;
+  background: var(--paper);
+  border: 1px solid rgba(25, 24, 23, .14);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, .2);
+}
+
+.contact-modal-close {
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  display: grid;
+  place-items: center;
+  padding: 5px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.contact-modal-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  background: #e2f0dc;
+  color: #287a32;
+}
+
+.contact-modal-icon.error {
+  background: #ffe4dc;
+  color: var(--red);
+}
+
+.contact-result-modal h3 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: clamp(25px, 5vw, 34px);
+  line-height: 1.08;
+}
+
+.contact-result-modal p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 14px 0 22px;
+}
+
+.contact-result-modal .button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  cursor: pointer;
+}
+
+/* Responsive */
+
+@media (max-width: 760px) {
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .contact-form {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .contact {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    gap: 35px;
+  }
+
+  .contact-links {
+    gap: 16px;
+  }
+
+  .contact-form {
+    gap: 18px;
+  }
+
+  .contact-result-modal {
+    padding: 30px 22px 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-spin {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: .01ms !important;
+  }
+}

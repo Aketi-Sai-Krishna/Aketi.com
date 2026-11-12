@@ -1,7 +1,7 @@
 /* Styles for Navbar component */
 
 .site-header {
-  height: 56px; min-height: 56px; width: min(98%, 1200px);
+  height: 56px; min-height: 56px; width: min(98%, 1100px);
   padding: 0 clamp(16px, 2.2vw, 30px); display: flex; align-items: center;
   justify-content: space-between; gap: 22px; background: #080808; color: var(--lemon);
   position: fixed; top: 0; left: 50%; transform: translateX(-50%); z-index: 1000;

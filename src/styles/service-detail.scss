@@ -1,0 +1,1276 @@
+
+/* AKETI — Service detail pages */
+
+.service-detail {
+  padding-top: 56px;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.service-detail .section-shell,
+.service-not-found.section-shell {
+  padding-left: var(--page-pad);
+  padding-right: var(--page-pad);
+}
+
+.service-eyebrow {
+  margin: 0;
+  color: var(--red);
+  font-size: 10px;
+  line-height: 1.5;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.service-detail-hero {
+  position: relative;
+  padding-top: 40px;
+//   padding-bottom: 0px;
+  background: var(--paper);
+}
+
+.service-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.service-breadcrumb a {
+  transition: color 0.2s ease;
+}
+
+.service-breadcrumb a:hover {
+  color: var(--red);
+}
+
+.service-breadcrumb > span:last-child {
+  color: var(--ink);
+}
+
+.service-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  align-items: center;
+  gap: clamp(35px, 7vw, 100px);
+  padding-top: clamp(6px, 3vw, 5px);
+  padding-bottom: 65px;
+}
+
+.service-hero-copy {
+  min-width: 0;
+}
+
+.service-hero-copy h1 {
+  margin: 25px 0 25px;
+  font-size: clamp(55px, 7.7vw, 108px);
+  line-height: 0.91;
+  letter-spacing: -0.075em;
+  overflow-wrap: anywhere;
+}
+
+.service-hero-copy h1 em,
+.service-statement h2 em,
+.service-section-heading h2 em,
+.service-deliverables h2 em,
+.service-cta h2 em {
+  color: var(--red);
+  font-style: normal;
+}
+
+.service-hero-intro {
+  max-width: 510px;
+  margin-bottom: 30px;
+  color: #625c53;
+  font-size: clamp(15px, 1.35vw, 17px);
+  line-height: 1.75;
+}
+
+.service-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
+
+.service-button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 13px 19px;
+  border: 1px solid var(--red);
+  border-radius: 99px;
+  background: var(--red);
+  color: var(--lemon);
+  font-size: 12px;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.service-button:hover {
+  transform: translateY(-2px);
+  background: transparent;
+  color: var(--red);
+}
+
+.service-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--ink);
+  font-size: 12px;
+}
+
+.service-text-link svg,
+.service-scroll-link svg {
+  transition: transform 0.2s ease;
+}
+
+.service-text-link:hover svg,
+.service-scroll-link:hover svg {
+  transform: translate(2px, 2px);
+}
+
+/* Abstract service visual */
+
+.service-hero-art {
+  position: relative;
+  display: flex;
+  min-height: 390px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--lemon);
+  border: 1px solid var(--line);
+}
+
+.service-art-top,
+.service-art-caption {
+  position: absolute;
+  right: 20px;
+  left: 20px;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+.service-art-top {
+  top: 20px;
+}
+
+.service-art-caption {
+  bottom: 20px;
+  color: var(--red);
+}
+
+.service-art-symbol {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: 155px;
+  height: 155px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--red);
+  color: var(--lemon);
+  animation: service-symbol-float 5s ease-in-out infinite;
+}
+
+.service-art-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 260px;
+  height: 260px;
+  border: 1px solid rgba(184, 17, 4, 0.35);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.service-art-orbit-one {
+  width: 310px;
+  height: 310px;
+}
+
+.service-art-orbit-two {
+  width: 220px;
+  height: 220px;
+  border-style: dashed;
+  animation: service-orbit-spin 35s linear infinite;
+}
+
+.service-scroll-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 17px 0 0;
+  border-top: 1px solid var(--line);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+/* Statement */
+
+.service-statement {
+  padding-top: clamp(25px, 10vw, 35px);
+  padding-bottom: clamp(25px, 10vw, 35px);
+  background: var(--lemon);
+}
+
+.service-statement h2 {
+  max-width: 1050px;
+  margin: 28px 0 0;
+  font-size: clamp(40px, 6.3vw, 83px);
+  line-height: 0.99;
+  letter-spacing: -0.065em;
+}
+
+/* Offerings */
+
+.service-offerings {
+  padding-top: clamp(75px, 9vw, 115px);
+  padding-bottom: clamp(75px, 9vw, 115px);
+}
+
+.service-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 35px;
+  margin-bottom: 45px;
+}
+
+.service-section-heading h2,
+.service-deliverables h2,
+.service-cta h2 {
+  margin: 22px 0 0;
+  font-size: clamp(43px, 6vw, 76px);
+  line-height: 0.96;
+  letter-spacing: -0.065em;
+}
+
+.service-section-heading > p {
+  max-width: 340px;
+  margin: 0 0 5px;
+  color: #625c53;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.service-offering-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+//   border-top: 1px solid var(--line);
+//   border-left: 1px solid var(--line);
+}
+
+
+/* =========================================
+   AKETI — Interactive 3D Service Cards
+========================================= */
+
+.service-offering-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  perspective: 1200px;
+  perspective-origin: center;
+}
+
+.service-offering-card {
+  --rotate-x: 0deg;
+  --rotate-y: 0deg;
+
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 155px;
+  padding: 15px;
+
+  overflow: hidden;
+  background: var(--paper);
+  border: 1px solid rgba(165, 82, 0, 0.15);
+  border-radius: 8px;
+
+  transform:
+    perspective(1000px)
+    rotateX(var(--rotate-x))
+    rotateY(var(--rotate-y))
+    translateZ(0);
+
+  transform-style: preserve-3d;
+  transform-origin: center;
+
+  box-shadow:
+    0 3px 8px rgba(25, 24, 23, 0.025),
+    0 1px 2px rgba(25, 24, 23, 0.025);
+
+  transition:
+    transform 180ms ease-out,
+    box-shadow 300ms ease,
+    border-color 250ms ease,
+    background-color 250ms ease;
+
+  will-change: transform;
+}
+
+/* Soft reflected light */
+
+.service-offering-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255, 250, 205, 0.8),
+      transparent 65%
+    );
+
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+/* Keep card contents on separate depth planes */
+
+.service-card-number {
+  position: relative;
+  align-self: flex-start;
+
+  color: var(--red);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+
+  transform: translateZ(24px);
+  transition: transform 300ms ease;
+}
+
+.service-offering-card h3 {
+  position: relative;
+  margin: 36px 0 10px;
+
+  font-size: clamp(22px, 2.4vw, 30px);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+
+  transform: translateZ(35px);
+  transform-style: preserve-3d;
+
+  transition:
+    transform 300ms ease,
+    color 250ms ease;
+}
+
+.service-offering-card p {
+  position: relative;
+  max-width: 440px;
+  margin: 0 0 12px;
+
+  color: #625c53;
+  font-size: 13px;
+  line-height: 1.75;
+
+  transform: translateZ(20px);
+  transition: transform 300ms ease;
+}
+
+.service-card-arrow {
+  position: relative;
+  align-self: flex-end;
+  margin-top: auto;
+
+  color: var(--red);
+
+  transform: translateZ(30px);
+  transition:
+    transform 300ms ease,
+    color 250ms ease;
+}
+
+/* Popup and 3D hover */
+
+@media (hover: hover) and (pointer: fine) {
+  .service-offering-card:hover {
+    z-index: 2;
+
+    background-color: #fffaf0;
+    border-color: rgba(184, 17, 4, 0.45);
+
+    transform:
+      perspective(1000px)
+      rotateX(var(--rotate-x))
+      rotateY(var(--rotate-y))
+      translateY(-9px)
+      translateZ(18px);
+
+    box-shadow:
+      0 28px 45px rgba(25, 24, 23, 0.12),
+      0 12px 20px rgba(25, 24, 23, 0.07),
+      0 3px 6px rgba(25, 24, 23, 0.04);
+  }
+
+  .service-offering-card:hover::before {
+    opacity: 1;
+  }
+
+  .service-offering-card:hover .service-card-number {
+    transform: translateZ(42px);
+  }
+
+  .service-offering-card:hover h3 {
+    transform: translateZ(55px);
+    color: var(--red);
+  }
+
+  .service-offering-card:hover p {
+    transform: translateZ(32px);
+  }
+
+  .service-offering-card:hover .service-card-arrow {
+    transform: translateZ(48px) translate(-3px, -3px);
+  }
+}
+
+/* Keyboard accessibility */
+
+.service-offering-card:focus-within {
+  outline: 2px solid var(--red);
+  outline-offset: 4px;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .service-offering-grid {
+    gap: 16px;
+  }
+
+  .service-offering-card {
+    padding: 24px;
+    min-height: 235px;
+  }
+}
+
+/* Mobile: retain a clean, touch-friendly layout */
+
+@media (max-width: 700px) {
+  .service-offering-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    perspective: none;
+  }
+
+  .service-offering-card {
+    min-height: 205px;
+    padding: 23px;
+
+    transform: none;
+    transition:
+      transform 200ms ease,
+      box-shadow 200ms ease,
+      border-color 200ms ease;
+    will-change: auto;
+  }
+
+  .service-offering-card h3 {
+    margin-top: 27px;
+  }
+
+  .service-offering-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .service-offering-card:hover h3,
+  .service-offering-card:hover p,
+  .service-offering-card:hover .service-card-number,
+  .service-offering-card:hover .service-card-arrow {
+    transform: none;
+  }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .service-offering-card,
+  .service-offering-card::before,
+  .service-card-number,
+  .service-offering-card h3,
+  .service-offering-card p,
+  .service-card-arrow {
+    transition: none !important;
+  }
+
+  .service-offering-card:hover {
+    transform: none;
+  }
+}
+
+
+.service-offering-card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 235px;
+  flex-direction: column;
+  padding: 27px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  transition: background 0.25s ease;
+}
+
+.service-offering-card:hover {
+  background: var(--lemon);
+}
+
+.service-card-number {
+  color: var(--red);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+.service-offering-card h3 {
+  margin: 34px 0 12px;
+  font-size: clamp(22px, 2.4vw, 30px);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.service-offering-card p {
+  max-width: 440px;
+  margin: 0 0 22px;
+  color: #625c53;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.service-card-arrow {
+  margin-top: auto;
+  color: var(--red);
+  align-self: flex-end;
+}
+
+/* Deliverables */
+
+.service-deliverables {
+  padding: clamp(70px, 9vw, 115px) 0;
+  background: var(--red);
+  color: var(--lemon);
+}
+
+.service-deliverables .service-eyebrow {
+  color: var(--lemon);
+  opacity: 0.8;
+}
+
+.service-deliverables-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: start;
+  gap: clamp(35px, 8vw, 115px);
+}
+
+.service-deliverables h2 em {
+  color: var(--lemon);
+}
+
+.service-deliverables-intro {
+  max-width: 360px;
+  margin-top: 25px;
+  color: rgba(255, 250, 205, 0.8);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.service-deliverable-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.service-deliverable-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 19px 0;
+  border-bottom: 1px solid rgba(255, 250, 205, 0.28);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.service-deliverable-list li:first-child {
+  border-top: 1px solid rgba(255, 250, 205, 0.28);
+}
+
+.service-deliverable-list svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+/* Process */
+
+
+/* =========================================
+   AKETI — 3D Process Steps
+========================================= */
+
+.service-process-list {
+  display: grid;
+  gap: 14px;
+  perspective: 1200px;
+}
+
+.service-process-item {
+  --process-rotate-x: 0deg;
+  --process-rotate-y: 0deg;
+
+  position: relative;
+  display: grid;
+  grid-template-columns: 55px minmax(150px, 0.8fr) minmax(0, 1.2fr) 20px;
+  align-items: center;
+  gap: 25px;
+
+  min-width: 0;
+  padding: 20px 24px;
+
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+
+  transform:
+    perspective(1000px)
+    rotateX(var(--process-rotate-x))
+    rotateY(var(--process-rotate-y))
+    translateZ(0);
+
+  transform-style: preserve-3d;
+
+  box-shadow: 0 2px 5px rgba(25, 24, 23, 0.025);
+
+  transition:
+    transform 220ms ease-out,
+    box-shadow 300ms ease,
+    border-color 250ms ease,
+    background-color 250ms ease;
+}
+
+/* Step number */
+
+.service-process-item > span {
+  color: var(--red);
+  font-size: 11px;
+  align-self: start;
+  padding-top: 5px;
+  transform: translateZ(20px);
+  transition: transform 300ms ease;
+}
+
+/* Step title */
+
+.service-process-item h3 {
+  margin: 0;
+  font-size: clamp(21px, 2.4vw, 29px);
+  line-height: 1.1;
+  transform: translateZ(25px);
+  transition:
+    transform 300ms ease,
+    color 250ms ease;
+}
+
+/* Step description */
+
+.service-process-item p {
+  max-width: 450px;
+  margin: 0;
+  color: #625c53;
+  font-size: 13px;
+  line-height: 1.75;
+  transform: translateZ(15px);
+  transition: transform 300ms ease;
+}
+
+/* Arrow */
+
+.service-process-item > svg {
+  justify-self: end;
+  color: var(--red);
+  transform: translateZ(20px);
+  transition: transform 300ms ease;
+}
+
+/* Hover interaction */
+
+@media (hover: hover) and (pointer: fine) {
+  .service-process-item:hover {
+    z-index: 2;
+    background-color: var(--lemon);
+    border-color: rgba(184, 17, 4, 0.4);
+
+    transform:
+      perspective(1000px)
+      rotateX(var(--process-rotate-x))
+      rotateY(var(--process-rotate-y))
+      translateY(-5px)
+      translateZ(12px);
+
+    box-shadow:
+      0 20px 35px rgba(25, 24, 23, 0.09),
+      0 6px 12px rgba(25, 24, 23, 0.04);
+  }
+
+  .service-process-item:hover > span {
+    color: var(--lemon);
+    transform: translateZ(35px);
+  }
+
+  .service-process-item:hover h3 {
+    color: var(--red);
+    transform: translateZ(45px);
+  }
+
+  .service-process-item:hover p {
+    transform: translateZ(30px);
+  }
+
+  .service-process-item:hover > svg {
+    transform: translateZ(40px) translate(2px, -2px);
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .service-process-item {
+    grid-template-columns: 35px minmax(130px, 0.8fr) minmax(0, 1.2fr) 18px;
+    gap: 15px;
+    padding: 24px 18px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .service-process-list {
+    gap: 10px;
+    perspective: none;
+  }
+
+  .service-process-item {
+    grid-template-columns: 32px minmax(0, 1fr) 18px;
+    gap: 12px;
+    padding: 22px 16px;
+    transform: none;
+  }
+
+  .service-process-item h3 {
+    grid-column: 2;
+  }
+
+  .service-process-item p {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .service-process-item > svg {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .service-process-item:hover {
+    transform: translateY(-2px);
+  }
+
+  .service-process-item:hover > span,
+  .service-process-item:hover h3,
+  .service-process-item:hover p,
+  .service-process-item:hover > svg {
+    transform: none;
+  }
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .service-process-item,
+  .service-process-item > span,
+  .service-process-item h3,
+  .service-process-item p,
+  .service-process-item > svg {
+    transition: none !important;
+  }
+
+  .service-process-item:hover {
+    transform: none;
+  }
+}
+
+
+.service-process {
+  padding-top: clamp(25px, 10vw, 35px);
+  padding-bottom: clamp(25px, 10vw, 35px);
+}
+
+.service-process-list {
+  border-top: 1px solid var(--line);
+}
+
+.service-process-item {
+  display: grid;
+  grid-template-columns: 55px minmax(150px, 0.8fr) minmax(0, 1.2fr) 20px;
+  align-items: start;
+  gap: 25px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.service-process-item > span {
+  padding-top: 5px;
+  color: var(--red);
+  font-size: 11px;
+}
+
+.service-process-item h3 {
+  margin: 0;
+  font-size: clamp(21px, 2.4vw, 29px);
+  line-height: 1.1;
+}
+
+.service-process-item p {
+  max-width: 450px;
+  margin: 0;
+  color: #625c53;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.service-process-item > svg {
+  color: var(--red);
+}
+
+/* Final CTA */
+
+.service-cta {
+//   padding-top: clamp(75px, 9vw, 115px);
+//   padding-bottom: clamp(55px, 7vw, 85px);
+  padding-top: clamp(25px, 10vw, 65px);
+  padding-bottom: clamp(25px, 10vw, 35px);
+  background: var(--lemon);
+}
+
+.service-cta h2 {
+  font-size: clamp(55px, 9vw, 112px);
+}
+
+.service-cta-bottom {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 25px;
+  margin-top: 35px;
+  padding-top: 23px;
+  border-top: 1px solid var(--line);
+}
+
+.service-cta-bottom p {
+  max-width: 420px;
+  margin: 0;
+  color: #625c53;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.service-button-dark {
+  flex: 0 0 auto;
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--lemon);
+}
+
+.service-button-dark:hover {
+  background: transparent;
+  color: var(--ink);
+}
+
+
+
+/* AKETI — Process steps: aligned inside each card */
+
+.service-process-list {
+  border-top: none;
+  gap: 14px;
+  perspective: 1200px;
+}
+
+.service-process-item {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 48px minmax(220px, 0.9fr) minmax(0, 1.3fr) 24px;
+  align-items: center;
+  gap: 24px;
+
+  width: 100%;
+  min-height: 110px;
+  padding: 20px 50px;
+
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--paper);
+
+  transform:
+    perspective(1000px)
+    rotateX(var(--process-rotate-x, 0deg))
+    rotateY(var(--process-rotate-y, 0deg))
+    translateZ(0);
+
+  transform-style: preserve-3d;
+
+  transition:
+    transform 220ms ease-out,
+    box-shadow 300ms ease,
+    border-color 250ms ease,
+    background-color 250ms ease;
+}
+
+.service-process-item > span {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  padding: 0;
+  color: var(--red);
+  font-size: 12px;
+  transform: translateZ(20px);
+}
+
+.service-process-item h3 {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  margin: 0;
+  font-size: clamp(22px, 2.5vw, 34px);
+  line-height: 1.12;
+  transform: translateZ(25px);
+}
+
+.service-process-item p {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: center;
+  max-width: 520px;
+  margin: 0;
+  color: #625c53;
+  font-size: 14px;
+  line-height: 1.7;
+  transform: translateZ(15px);
+}
+
+.service-process-item > svg {
+  grid-column: 4;
+  grid-row: 1;
+  justify-self: end;
+  align-self: center;
+  color: var(--red);
+  transform: translateZ(20px);
+  transition: transform 300ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .service-process-item:hover {
+    z-index: 2;
+    border-color: rgba(184, 17, 4, 0.4);
+    background: var(--red);
+    box-shadow: 0 18px 32px rgba(25, 24, 23, 0.09);
+    transform:
+      perspective(1000px)
+      rotateX(var(--process-rotate-x, 0deg))
+      rotateY(var(--process-rotate-y, 0deg))
+      translateY(-4px)
+      translateZ(10px);
+  }
+
+  .service-process-item:hover h3 {
+    color: var(--lemon);
+    transform: translateZ(38px);
+  }
+
+  .service-process-item:hover > span {
+    transform: translateZ(30px);
+  }
+
+  .service-process-item:hover p {
+    color: var(--lemon);
+    transform: translateZ(25px);
+  }
+
+  .service-process-item:hover > svg {
+    color: var(--lemon);
+    transform: translateZ(35px) translate(2px, -2px);
+  }
+}
+
+@media (max-width: 900px) {
+  .service-process-item {
+    grid-template-columns: 35px minmax(160px, 0.9fr) minmax(0, 1.1fr) 20px;
+    gap: 16px;
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .service-process-item {
+    grid-template-columns: 30px minmax(0, 1fr) 20px;
+    gap: 12px;
+    min-height: 0;
+    padding: 22px 18px;
+  }
+
+  .service-process-item > span {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .service-process-item h3 {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 23px;
+  }
+
+  .service-process-item p {
+    grid-column: 2 / 4;
+    grid-row: 2;
+    margin-top: 8px;
+    font-size: 13px;
+  }
+
+  .service-process-item > svg {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-process-item,
+  .service-process-item h3,
+  .service-process-item p,
+  .service-process-item > span,
+  .service-process-item > svg {
+    transition: none !important;
+  }
+}
+
+
+/* Not found */
+
+.service-not-found {
+  display: flex;
+  min-height: 70vh;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+.service-not-found h1 {
+  max-width: 750px;
+  margin: 0;
+  font-size: clamp(48px, 8vw, 90px);
+  line-height: 0.95;
+}
+
+.service-not-found > p:not(.service-eyebrow) {
+  max-width: 500px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+@keyframes service-symbol-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes service-orbit-spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .service-hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(230px, 0.8fr);
+    gap: 30px;
+  }
+
+  .service-hero-art {
+    min-height: 330px;
+  }
+
+  .service-process-item {
+    grid-template-columns: 35px minmax(130px, 0.8fr) minmax(0, 1.2fr) 18px;
+    gap: 15px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .service-detail {
+    padding-top: 48px;
+  }
+
+  .service-detail-hero {
+    padding-top: 25px;
+  }
+
+  .service-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-top: 60px;
+    padding-bottom: 42px;
+  }
+
+  .service-hero-copy h1 {
+    margin-top: 22px;
+    font-size: clamp(47px, 12vw, 76px);
+  }
+
+  .service-hero-intro {
+    font-size: 15px;
+  }
+
+  .service-hero-art {
+    min-height: 300px;
+  }
+
+  .service-art-symbol {
+    width: 125px;
+    height: 125px;
+  }
+
+  .service-art-symbol svg {
+    width: 76px;
+    height: 76px;
+  }
+
+  .service-art-orbit-one {
+    width: 260px;
+    height: 260px;
+  }
+
+  .service-art-orbit-two {
+    width: 190px;
+    height: 190px;
+  }
+
+  .service-statement {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .service-statement h2 {
+    font-size: clamp(38px, 9vw, 60px);
+  }
+
+  .service-section-heading {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .service-section-heading > p {
+    margin-top: 22px;
+  }
+
+  .service-offering-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-offering-card {
+    min-height: 200px;
+    padding: 23px;
+  }
+
+  .service-offering-card h3 {
+    margin-top: 27px;
+  }
+
+  .service-deliverables-inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .service-process-item {
+    grid-template-columns: 32px minmax(0, 1fr) 18px;
+    gap: 12px;
+    padding: 23px 0;
+  }
+
+  .service-process-item h3 {
+    grid-column: 2;
+  }
+
+  .service-process-item p {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .service-process-item > svg {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .service-cta-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 400px) {
+  .service-hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .service-art-caption {
+    font-size: 8px;
+  }
+
+  .service-process-item {
+    grid-template-columns: 26px minmax(0, 1fr) 16px;
+    gap: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-art-symbol,
+  .service-art-orbit-two {
+    animation: none;
+  }
+}
