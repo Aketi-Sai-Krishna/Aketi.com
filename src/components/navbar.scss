@@ -1,18 +1,494 @@
-/* Styles for Navbar component */
+
+/* =========================================================
+   AKETI — NAVBAR
+   Desktop: 1025px and above
+   Tablet:   601px–1024px
+   Mobile:   600px and below
+========================================================= */
+
+/* Brand tokens */
+
+:root {
+  --aketi-red: #B81104;
+  --aketi-lemon: #FFFACD;
+  --aketi-ink: #191817;
+  --aketi-paper: #F5F1E8;
+  --aketi-muted: #716B61;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 .site-header {
-  height: 56px; min-height: 56px; width: min(98%, 1100px);
-  padding: 0 clamp(16px, 2.2vw, 30px); display: flex; align-items: center;
-  justify-content: space-between; gap: 22px; background: #080808; color: var(--lemon);
-  position: fixed; top: 0; left: 50%; transform: translateX(-50%); z-index: 1000;
-  border-radius: 0 0 28px 28px; box-shadow: 0 12px 30px rgba(0,0,0,.08);
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+
+  width: calc(100% - 64px);
+  max-width: 1600px;
+  height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 30px;
+
+  background: var(--aketi-ink);
+  border: 1px solid rgba(255, 250, 205, 0.12);
+  border-radius: 16px;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
-.wordmark { font-size: 27px; font-weight: 900; letter-spacing: -1.8px; color: var(--lemon); line-height: 1; white-space: nowrap; }
-.wordmark span { font-size: 9px; vertical-align: top; margin-left: 3px; letter-spacing: 0; }
-.nav { display: flex; align-items: center; gap: clamp(14px, 2.4vw, 34px); }
-.nav a { color: var(--lemon); font-size: 12px; display: flex; gap: 7px; align-items: flex-start; opacity: .86; transition: opacity .2s; white-space: nowrap; }
-.nav a:hover { opacity: 1; }
-.nav a span { font-size: 9px; color: #f36b56; }
-.header-cta { display: flex; align-items: center; gap: 8px; border: 0; border-radius: 99px; padding: 9px 14px; font-size: 11px; background: var(--lemon); color: var(--ink); transition: background .2s, transform .2s; white-space: nowrap; }
-.header-cta:hover { background: #fff; transform: translateY(-1px); }
-.menu-toggle { display: none; background: none; border: 0; color: var(--lemon); cursor: pointer; }
+
+/* =========================================================
+   WORDMARK
+========================================================= */
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+
+  color: var(--aketi-lemon);
+
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -1.8px;
+  line-height: 1;
+
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 38px;
+
+  margin-left: auto;
+  margin-right: 42px;
+}
+
+.nav-link {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  padding: 10px 0;
+
+  color: var(--aketi-lemon);
+
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    color 250ms ease,
+    opacity 250ms ease;
+}
+
+/* Desktop underline */
+
+.nav-link::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+
+  width: 0;
+  height: 1px;
+
+  background: var(--aketi-lemon);
+
+  transition: width 250ms ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Desktop navigation hover */
+
+.nav-link:hover {
+  opacity: 0.75;
+}
+
+/* =========================================================
+   DESKTOP CTA
+========================================================= */
+
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  min-height: 44px;
+  padding: 0 20px;
+
+  color: var(--aketi-ink);
+  background: var(--aketi-lemon);
+
+  border: 1px solid var(--aketi-lemon);
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    color 250ms ease,
+    background-color 250ms ease,
+    border-color 250ms ease,
+    transform 250ms ease;
+}
+
+.header-cta:hover {
+  color: var(--aketi-lemon);
+  background: transparent;
+  border-color: var(--aketi-lemon);
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   MOBILE CTA — HIDDEN ON DESKTOP
+========================================================= */
+
+.nav-mobile-cta {
+  display: none;
+}
+
+/* =========================================================
+   MENU TOGGLE — HIDDEN ON DESKTOP
+========================================================= */
+
+.menu-toggle {
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+
+  color: var(--aketi-lemon);
+  background: transparent;
+
+  border: 1px solid rgba(255, 250, 205, 0.25);
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition:
+    color 200ms ease,
+    background-color 200ms ease,
+    border-color 200ms ease;
+}
+
+.menu-toggle:hover {
+  color: var(--aketi-ink);
+  background: var(--aketi-lemon);
+  border-color: var(--aketi-lemon);
+}
+
+/* =========================================================
+   TABLET NAVIGATION — 1024px AND BELOW
+========================================================= */
+
+@media (max-width: 1024px) {
+  .site-header {
+    width: calc(100% - 48px);
+    height: 70px;
+
+    padding: 0 24px;
+  }
+
+  /* Hide desktop CTA */
+
+  .header-cta {
+    display: none;
+  }
+
+  /* Show hamburger */
+
+  .menu-toggle {
+    display: inline-flex;
+    flex-shrink: 0;
+  }
+
+  /* Dropdown navigation */
+
+  .nav {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+
+    width: 100%;
+    max-height: calc(100vh - 110px);
+    overflow-y: auto;
+
+    margin: 0;
+    padding: 14px;
+
+    background: var(--aketi-ink);
+    border: 1px solid rgba(255, 250, 205, 0.15);
+    border-radius: 16px;
+
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-8px);
+
+    transition:
+      opacity 220ms ease,
+      visibility 220ms ease,
+      transform 220ms ease;
+  }
+
+  /* Open menu */
+
+  .nav.nav-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translateY(0);
+  }
+
+  /* Tablet and mobile links */
+
+  .nav .nav-link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 52px;
+
+    padding: 14px 18px;
+
+    color: var(--aketi-lemon);
+    background: transparent;
+
+    border: 0;
+    border-bottom: 1px solid rgba(255, 250, 205, 0.12);
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: 400;
+
+    text-decoration: none;
+
+    opacity: 1;
+
+    transition:
+      background-color 250ms ease,
+      color 250ms ease,
+      padding-left 250ms ease,
+      box-shadow 250ms ease;
+  }
+
+  /* Remove desktop underline */
+
+  .nav .nav-link::after {
+    display: none;
+  }
+
+  /*
+    React-controlled hover.
+    Navbar.tsx adds .is-hovered only while
+    the mouse pointer is over a navigation link.
+  */
+
+  .nav.nav-open .nav-link.is-hovered {
+    color: var(--aketi-ink) !important;
+    background-color: var(--aketi-lemon) !important;
+
+    padding-left: 28px;
+
+    box-shadow: inset 4px 0 0 var(--aketi-red);
+  }
+
+  /* Keyboard accessibility */
+
+  .nav.nav-open .nav-link:focus-visible {
+    outline: 2px solid var(--aketi-red);
+    outline-offset: -2px;
+  }
+
+  /* Temporary press feedback */
+
+  .nav.nav-open .nav-link:active {
+    background-color: #F0E7A8;
+  }
+
+  /* Mobile CTA inside dropdown */
+
+  .nav-mobile-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    width: 100%;
+    min-height: 52px;
+
+    margin-top: 12px;
+    padding: 14px 18px;
+
+    color: var(--aketi-ink);
+    background: var(--aketi-lemon);
+
+    border: 1px solid var(--aketi-lemon);
+    border-radius: 999px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+      color 250ms ease,
+      background-color 250ms ease,
+      transform 250ms ease;
+  }
+
+  .nav-mobile-cta:hover {
+    color: var(--aketi-lemon);
+    background: transparent;
+
+    transform: translateY(-2px);
+  }
+}
+
+/* =========================================================
+   MOBILE — 600px AND BELOW
+========================================================= */
+
+@media (max-width: 600px) {
+  .site-header {
+    top: 10px;
+
+    width: calc(100% - 28px);
+    height: 64px;
+
+    padding: 0 16px;
+
+    border-radius: 13px;
+  }
+
+  .wordmark {
+    font-size: 27px;
+    letter-spacing: -1.5px;
+  }
+
+  .menu-toggle {
+    width: 42px;
+    height: 42px;
+  }
+
+  .nav {
+    top: calc(100% + 10px);
+
+    padding: 12px;
+
+    border-radius: 14px;
+  }
+
+  .nav .nav-link {
+    min-height: 50px;
+    padding: 13px 16px;
+
+    font-size: 14px;
+  }
+
+  .nav.nav-open .nav-link.is-hovered {
+    padding-left: 26px;
+  }
+
+  .nav-mobile-cta {
+    min-height: 50px;
+    padding: 13px 16px;
+
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE — 380px AND BELOW
+========================================================= */
+
+@media (max-width: 380px) {
+  .site-header {
+    width: calc(100% - 20px);
+    height: 60px;
+
+    padding: 0 13px;
+  }
+
+  .wordmark {
+    font-size: 25px;
+  }
+
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav {
+    padding: 10px;
+  }
+
+  .nav .nav-link {
+    min-height: 48px;
+    font-size: 13px;
+  }
+
+  .nav-mobile-cta {
+    font-size: 12px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header *,
+  .site-header *::before,
+  .site-header *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
