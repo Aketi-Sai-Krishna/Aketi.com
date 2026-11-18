@@ -9,13 +9,13 @@ export default function Hero() {
       <div className="hero-grid">
         {/* Hero content */}
         <div className="hero-copy">
-          <div><p className="eyebrow">WHO WE ARE</p></div>
+          {/* <div><p className="eyebrow">WHO WE ARE</p></div> */}
           <h1 className="hero-title">
-            <span>Your ideas, Our expertise</span>
+            <span>Your ideas <br/> Our expertise</span>
           </h1>
           <h2 className="hero-subtitle"> To Simplify Your Business</h2>
           <p className="hero-description">
-            From scattered challenges to connected solutions, we turn your complex business problems into smart digital experiences that help your business move forward.
+            From scattered challenges to connected solutions, we turn your complex business problems into the smart digital experiences that help your business move forward.
           </p>
           {/* Hero actions */}
           <div className="hero-actions">
