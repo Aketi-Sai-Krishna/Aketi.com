@@ -61,14 +61,22 @@ export default function OrbitVisual() {
     const scene = new THREE.Scene();
 
     const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100);
-    camera.position.set(7.8, 7.7, 8.5);
+    //camera.position.set(7.8, 7.7, 8.5);
+    camera.position.set(10, 9.5, 11);
     camera.lookAt(0, 0, 0);
 
+    // const renderer = new THREE.WebGLRenderer({
+    //   alpha: true,
+    //   antialias: true,
+    //   powerPreference: 'high-performance',
+    // });
     const renderer = new THREE.WebGLRenderer({
       alpha: true,
       antialias: true,
       powerPreference: 'high-performance',
     });
+
+    renderer.setClearColor(0x000000, 0);
 
     renderer.setPixelRatio(
       Math.min(window.devicePixelRatio || 1, 1.6),
@@ -137,11 +145,15 @@ export default function OrbitVisual() {
     const INITIAL_ROTATION_Z = 0.9;
 
     const sculpture = new THREE.Group();
+
+    sculpture.position.set(5, 2.5, 2);
+
     sculpture.rotation.set(
       INITIAL_ROTATION_X,
       INITIAL_ROTATION_Y,
       INITIAL_ROTATION_Z,
     );
+
     scene.add(sculpture);
 
     const half = (GRID - 1) / 2;
